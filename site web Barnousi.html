@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دار البرنوصي - دار البرنوصي / Dar Bernousi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background-color: #faf7f2;
+            color: #3a3a3a;
+            line-height: 1.6;
+        }
+
+        /* هيدر ذهبي فاخر */
+        .header {
+            background: linear-gradient(135deg, #d4af37, #f9e076);
+            color: #2c2c2c;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "❋";
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.08;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 3px;
+        }
+
+        .header .subtitle {
+            font-size: 1.4em;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        /* شريط تنقل كريمي */
+        .nav {
+            background-color: #f5e6d3;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #8b4513;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s;
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+
+        .nav a:hover {
+            color: #d4af37;
+            background-color: rgba(139, 69, 19, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* أقسام بيضاء مع حواف ذهبية */
+        .section {
+            background-color: white;
+            margin: 40px 0;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border: 2px solid #f9e076;
+            position: relative;
+        }
+
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #d4af37;
+            border-radius: 10px;
+            pointer-events: none;
+        }
+
+        .section h2 {
+            color: #8b4513;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #d4af37, #f9e076);
+        }
+
+        /* شبكة منتجات أنيقة */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            position: relative;
+            border: 1px solid #f9e076;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        /* صور المنتجات */
+        .product-image {
+            width: 100%;
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+        }
+
+        /* صور الجلابة */
+        .djellaba-1 { background-image: url('https://imgs.search.brave.com/f5O7qRrtwsUZ-b0GcwDz4DHQcA3gYBByiy5ay_am7AU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vcmll/bnRhbGUtc3RvcmUu/ZnIvY2RuL3Nob3Av/cHJvZHVjdHMvSDE2/MTJlYjMzYWFhYTQ3/MGU5OGE1NmFlNzhh/Y2IwOTQzdF8xMjgw/eC5qcGc_dj0xNjcy/MDczOTA0'); }
+        .djellaba-2 { background-image: url('https://imgs.search.brave.com/IZhbWGA5P59u56MMfQligFDg5gQhnhMUcJBbth4AdXg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/a2VuemFjYWZ0YW4u/Y29tLzIwNzUtbWVk/aXVtX2RlZmF1bHQv/ZGplbGxhYmEtdHVy/cXVvaXNlLmpwZw'); }
+        .djellaba-3 { background-image: url('https://imgs.search.brave.com/VcEMmWeTJVri0du-fuyf3AhXtM1YoqL2fpWAYNXcoS0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vcmll/bnRhbGUtbmF0aW9u/LmNvbS9jZG4vc2hv/cC9maWxlcy9INTM2/OGRhNzg0N2VjNDI2/YWI1OGM2YzNmMjZl/MjgwNzlRLndlYnA_/dj0xNzAzNTA5OTU5/JndpZHRoPTEwMDA'); }
+        .djellaba-4 { background-image: url('https://imgs.search.brave.com/V67UyrSM-cIzwnp-JPG3OtItxYTEBcmLVSQrkMFsl9s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtY29udGVudC1k/cm9waWZ5LmNvbS9h/cnRkamVsbGFiYS9w/cm9kdWN0cy9jaGF0/Z3B0X2ltYWdlXzJf/YW91dF8yMDI1X18w/M18xNF8zMl8xNzU0/MzM1NjE0XzFiMjFl/YWVmLTk3YTAtNGFi/OS1iNWUxLWNmMWIx/MTU1NDViMC53ZWJw'); }
+
+        /* صور القفاطن */
+        .caftan-1 { background-image: url('https://imgs.search.brave.com/ZLSi-YcgBPLrrGiRA42m_qsfoZapIq_TAvhM3bKrk2E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cy5i/b3VjaHJhZmlsYWxp/bGFobG91LmNvbS9j/ZG4vc2hvcC9maWxl/cy82Ml9lYjY5OTBl/YS1iMjY3LTQxZjUt/ODQ3YS1mYmJmYWNi/MmRjNzQuanBnP2Ny/b3A9cmVnaW9uJmNy/b3BfaGVpZ2h0PTIw/NDgmY3JvcF9sZWZ0/PTIwNCZjcm9wX3Rv/cD0wJmNyb3Bfd2lk/dGg9MTYzOCZ2PTE3/MDkyNTQ3MjImd2lk/dGg9MjA0OA'); }
+        .caftan-2 { background-image: url('https://imgs.search.brave.com/mu2_4Dkxi6Yn5tBw8-SUC7rI6u7-bUfwY5geZskoG_A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sYWdv/bm5hLmNvbS9jZG4v/c2hvcC9maWxlcy9h/ODQ5MjAxYS0zZDM3/LTQzNWMtOTcwYi05/NzI2ZTcyMzE0ZTBf/YWU4NGM2MTktMmI0/Ny00MTg1LTlmOWYt/ZTJmYmIyY2QwMzRl/LmpwZz92PTE3MDc1/MzYyMzI'); }
+        .caftan-3 { background-image: url('https://imgs.search.brave.com/11sCsI2VV3uzOSvmHyxcAciytRZxjCNA3uE3mN6uFeo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/a291bm91ei5tYS8x/NjUwLWhvbWVfZGVm/YXVsdC9jYWZ0YW4t/bWFyb2NhaW4tbW9k/ZXJuZS1mZW1tZS5q/cGc'); }
+        .caftan-4 { background-image: url('https://imgs.search.brave.com/Wsv6JYHnvDLGYFNAFm4AjvB9WWKHIlxukfm9-3j8HA4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzllL2U0/L2I1LzllZTRiNWZm/ZWViNGVmMWZmYWE5/ODRlZmYwM2IwMWMz/LmpwZw'); }
+
+        /* صور التكشيطة */
+        .takchita-1 { background-image: url('https://imgs.search.brave.com/PQpzwaeSKLJIa0vBGRqJHXAulDPSjBDDhEGP7KkuHtw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzUzLzU1/L2IyLzUzNTViMjU1/ZTE4NjBiODJiZGJi/NDZkZDkxYmJlMzE1/LmpwZw'); }
+        .takchita-2 { background-image: url('https://imgs.search.brave.com/SN0i9vuQ-3i5hJHxRVAkdZuLtI8WYRNQbz0UNhCMRZw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9maW5l/emluZS5jb20vY2Ru/L3Nob3AvcHJvZHVj/dHMvMzFjNDljZDA4/YzIzOGI5YTY3ZTRl/ZWE2MmMxNTg5ZGFf/NDAweC5qcGc_dj0x/NTkyNDA5MzQx'); }
+        .takchita-3 { background-image: url('https://imgs.search.brave.com/PazmzoJfL1OAe0szDtxfn48oLEruNznVcbmVxN-gklA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2FmdGFuLWluZHVz/dHJ5LmNvbS9jZG4v/c2hvcC9maWxlcy81/RjgyMzRCMi0zNDE5/LTRBRkUtOTU5OS02/QUM3NDczQzYxMTZf/NTMweEAyeC5qcGc_/dj0xNzM5NzMyNTM4'); }
+        .takchita-4 { background-image: url('https://imgs.search.brave.com/Bctni2Sc_idpcg4MfOHudQ-VZXB1zWhGYvPuAPGMujg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jYWZ0/YW5pYXBhcmlzLmNv/bS9jZG4vc2hvcC9m/aWxlcy9UX0FfS19D/X0hfSV9UX0FfRV9E/X0VfTl90YWtjaGl0/YV9jYWZ0YW5fbWFy/b2NhaW5lX21vcm9j/Y2FuZHJlc3NfbGVi/c3NhX2hlbm5hX2hl/bm5hZGF5X2xlYnNz/YXRyYWRpdGlvbm5l/bGxlX2NhZnRhbnZl/cnRfY2FmdGFuaW5z/cGlyYXRpb25fMy5q/cGc_dj0xNzQzODc3/NDY0JndpZHRoPTkw/MA'); }
+
+        .product-info {
+            padding: 25px;
+            position: relative;
+        }
+
+        .product-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 12px;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 18px;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        .product-price {
+            font-size: 1.6em;
+            color: #d4af37;
+            font-weight: bold;
+            background: linear-gradient(to right, #8b4513, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* نموذج التصميم المخصص */
+        .custom-design-form {
+            background: linear-gradient(135deg, #f5e6d3, #faf7f2);
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #8b4513;
+            font-size: 1.1em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            font-size: 1.1em;
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .submit-btn {
+            background: linear-gradient(to right, #8b4513, #d4af37);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            margin: 30px auto 0;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(139, 69, 19, 0.3);
+        }
+
+        /* فوتر ذهبي */
+        .footer {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: "❋";
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>دار البرنوصي</h1>
+        <p class="subtitle">Dar  Bernousi - Caftans, Djellabas & Takchitas Marocains</p>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#caftans">Caftans القفاطن</a></li>
+            <li><a href="#djellabas">Djellabas الجلابة</a></li>
+            <li><a href="#takchitas">Takchitas التكشيطة</a></li>
+            <li><a href="#custom">Design Personnalisé تصميم مخصص</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- قسم القفاطن -->
+        <section id="caftans" class="section">
+            <h2>مجموعة القفاطن المغربية / Collection de Caftans</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image caftan-1">
+                        
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">قفطان ملكي مطرز / Caftan Royal Brodé</h3>
+                        <p class="product-description">قفطان فاخر باللون الذهبي مطرز يدوياً بخيوط الذهب، مناسب للحفلات الملكية والمناسبات الخاصة</p>
+                        <p class="product-price">3,500 درهم</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image caftan-2"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">قفطان عصري ملون / Caftan Moderne Coloré</h3>
+                        <p class="product-description">قفطان حديث بألوان زاهية وتصميم عصري يناسب جميع الأعمار، مصنوع من أجود الحرير</p>
+                        <p class="product-price">2,200 درهم</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image caftan-3"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">قفطان تقليدي أسود / Caftan Traditionnel Noir</h3>
+                        <p class="product-description">قفطان تقليدي أسود مزين بالتطريز المغربي الأصيل، قطعة كلاسيكية لا تخرج عن الموضة</p>
+                        <p class="product-price">2,800 درهم</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image caftan-4"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">قفطان وردي ناعم / Caftan Rose Délicat</h3>
+                        <p class="product-description">قفطان أنيق باللون الوردي الفاتح مزين بالخرز الناعم، مثالي للمناسبات النهارية</p>
+                        <p class="product-price">1,900 درهم</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الجلابة -->
+        <section id="djellabas" class="section">
+            <h2>مجموعة الجلابة المغربية / Collection de Djellabas</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image djellaba-1"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">جلابة صيفية بيضاء / Djellaba Été Blanche</h3>
+                        <p class="product-description">جلابة صيفية خفيفة باللون الأبيض مطرزة بالأبيض، مصنوعة من القطن الطبيعي 100%</p>
+                        <p class="product-price">750 درهم</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image djellaba-2"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">جلابة شتوية تركواز / Djellaba Hiver Turquoise</h3>
+                        <p class="product-description">جلابة شتوية دافئة باللون التركوازي مزينة بتطريز تقليدي، مصنوعة من الصوف المغربي</p>
+                        <p class="product-price">1,100 درهم</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image djellaba-3"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">جلابة رمادية أنيقة / Djellaba Grise Élégante</h3>
+                        <p class="product-description">جلابة رمادية عصرية بقصة حديثة، مثالية للخروجات اليومية والمناسبات العائلية</p>
+                        <p class="product-price">850 درهم</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image djellaba-4"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">جلابة سوداء كلاسيكية / Djellaba Noire Classique</h3>
+                        <p class="product-description">جلابة سوداء تقليدية بربطة حريرية، قطعة أساسية في خزانة كل امرأة مغربية</p>
+                        <p class="product-price">950 درهم</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم التكشيطة -->
+        <section id="takchitas" class="section">
+            <h2>مجموعة التكشيطة المغربية / Collection de Takchitas</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image takchita-1"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">تكشيطة ملكية ذهبية / Takchita Royale Dorée</h3>
+                        <p class="product-description">تكشيطة فاخرة باللون الذهبي مزخرفة بالخرز والكريستال، قطعة فريدة لأصحاب الذوق الرفيع</p>
+                        <p class="product-price">4,500 درهم</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image takchita-2"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">تكشيطة وردية ناعمة / Takchita Rose Soyeuse</h3>
+                        <p class="product-description">تكشيطة وردية أنيقة مكونة من قطعتين، مزينة بتطريز يدوي دقيق على الحرير الناعم</p>
+                        <p class="product-price">3,200 درهم</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image takchita-3"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">تكشيطة زرقاء ملكية / Takchita Bleue Royale</h3>
+                        <p class="product-description">تكشيطة زرقاء فاخرة مزينة بالخرز الأزرق والفضي، تصميم ملكي لأهم المناسبات</p>
+                        <p class="product-price">5,800 درهم</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image takchita-4"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">تكشيطة خضراء عصرية / Takchita Verte Moderne</h3>
+                        <p class="product-description">تكشيطة خضراء بأسلوب عصري يجمع بين التقليدي والحديث، مناسبة للمناسبات النهارية</p>
+                        <p class="product-price">2,800 درهم</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم التصميم المخصص -->
+        <section id="custom" class="section">
+            <h2>طلب تصميم مخصص / Commande Personnalisée</h2>
+            <div class="custom-design-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل / Nom Complet:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف / Téléphone:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني / Email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="type">نوع اللباس / Type de Vêtement:</label>
+                        <select id="type" name="type" required>
+                            <option value="">اختر النوع / Choisissez le type</option>
+                            <option value="caftan">قفطان Caftan</option>
+                            <option value="djellaba">جلابة Djellaba</option>
+                            <option value="takchita">تكشيطة Takchita</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="size">المقاس / Taille:</label>
+                        <select id="size" name="size" required>
+                            <option value="">اختر المقاس / Choisissez la taille</option>
+                            <option value="S">صغير Petit (S)</option>
+                            <option value="M">متوسط Moyen (M)</option>
+                            <option value="L">كبير Grand (L)</option>
+                            <option value="XL"> extra كبير Très Grand (XL)</option>
+                            <option value="custom">مقاس مخصص Sur Mesure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="color">اللون المفضل / Couleur Préférée:</label>
+                        <input type="text" id="color" name="color" placeholder="مثلاً: أحمر، أزرق، ذهبي... / Rouge, Bleu, Doré...">
+                    </div>
+                    <div class="form-group">
+                        <label for="details">تفاصيل إضافية / Détails Supplémentaires:</label>
+                        <textarea id="details" name="details" placeholder="صف لنا التصميم الذي تريده... / Décrivez-nous le design que vous souhaitez..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">إرسال الطلب / Envoyer la Commande</button>
+                </form>
+            </div>
+        </section>
+    </div>
+   
+
+    <footer class="footer">
+        <p>&copy; 2025 دار البرنوصي  - Tous droits réservés</p>
+        <p>العنوان: تمارة، المغرب | Adresse: Témara, Maroc</p>
+        <p>الهاتف: +212 6 75 39 40 13 |  Téléphone: +212 6 75 39 40 13</p>
+    </footer>
+</body>
+</html>
